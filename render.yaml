@@ -6,44 +6,6 @@ services:
     plan: free
     region: oregon
     envVars:
-      - key: SERVER_URL
-        value: https://evolution-api-whatsapp.onrender.com
       - key: AUTHENTICATION_API_KEY
         generateValue: true
         sync: false
-      - key: LOG_LEVEL
-        value: ERROR
-      - key: CORS_ORIGIN
-        value: "*"
-      - key: WEBHOOK_GLOBAL_URL
-        value: https://hndll.app.n8n.cloud/webhook/evolution-webhook
-      - key: WEBHOOK_GLOBAL_ENABLED
-        value: true
-      - key: WEBHOOK_GLOBAL_WEBHOOK_BY_EVENTS
-        value: false
-      - key: WEBHOOK_GLOBAL_EVENTS
-        value: "MESSAGES_UPSERT,MESSAGES_UPDATE,MESSAGES_DELETE,SEND_MESSAGE,CONTACTS_SET,CONTACTS_UPSERT,CONTACTS_UPDATE,PRESENCE_UPDATE,CHATS_SET,CHATS_UPSERT,CHATS_UPDATE,CHATS_DELETE,GROUPS_UPSERT,GROUP_UPDATE,GROUP_PARTICIPANTS_UPDATE,CONNECTION_UPDATE,CALL,NEW_JWT_TOKEN"
-      - key: DATABASE_ENABLED
-        value: false
-      - key: DATABASE_CONNECTION_URI
-        value: ""
-      - key: DATABASE_CONNECTION_URI_POSTGRES
-        value: ""
-      - key: DATABASE_CONNECTION_URI_MONGODB
-        value: ""
-      - key: REDIS_ENABLED
-        value: false
-      - key: REDIS_URI
-        value: ""
-      - key: DATABASE_PROVIDER
-        value: ""
-      - key: STORE_MESSAGES
-        value: false
-      - key: STORE_CONTACTS
-        value: false
-      - key: STORE_CHATS
-        value: false
-      - key: STORE_PRESENCE
-        value: false
-      - key: STORE_SETTINGS
-        value: false
