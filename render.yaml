@@ -27,7 +27,23 @@ services:
         value: false
       - key: DATABASE_CONNECTION_URI
         value: ""
+      - key: DATABASE_CONNECTION_URI_POSTGRES
+        value: ""
+      - key: DATABASE_CONNECTION_URI_MONGODB
+        value: ""
       - key: REDIS_ENABLED
         value: false
       - key: REDIS_URI
         value: ""
+      - key: DATABASE_PROVIDER
+        value: ""
+      - key: STORE_MESSAGES
+        value: false
+      - key: STORE_CONTACTS
+        value: false
+      - key: STORE_CHATS
+        value: false
+      - key: STORE_PRESENCE
+        value: false
+      - key: STORE_SETTINGS
+        value: false
