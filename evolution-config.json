@@ -1,0 +1,48 @@
+{
+  "server": {
+    "url": "https://evolution-api-whatsapp.onrender.com",
+    "port": 8080,
+    "logLevel": "ERROR"
+  },
+  "database": {
+    "enabled": false,
+    "provider": "",
+    "connectionUri": ""
+  },
+  "redis": {
+    "enabled": false,
+    "uri": ""
+  },
+  "store": {
+    "messages": false,
+    "contacts": false,
+    "chats": false,
+    "presence": false,
+    "settings": false
+  },
+  "webhook": {
+    "globalUrl": "https://hndll.app.n8n.cloud/webhook/evolution-webhook",
+    "globalEnabled": true,
+    "globalWebhookByEvents": false,
+    "globalEvents": [
+      "MESSAGES_UPSERT",
+      "MESSAGES_UPDATE",
+      "MESSAGES_DELETE",
+      "SEND_MESSAGE",
+      "CONTACTS_SET",
+      "CONTACTS_UPSERT",
+      "CONTACTS_UPDATE",
+      "PRESENCE_UPDATE",
+      "CHATS_SET",
+      "CHATS_UPSERT",
+      "CHATS_UPDATE",
+      "CHATS_DELETE",
+      "GROUPS_UPSERT",
+      "GROUP_UPDATE",
+      "GROUP_PARTICIPANTS_UPDATE",
+      "CONNECTION_UPDATE",
+      "CALL",
+      "NEW_JWT_TOKEN"
+    ]
+  }
+}

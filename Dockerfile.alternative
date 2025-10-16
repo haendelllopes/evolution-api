@@ -1,23 +1,37 @@
-FROM atendai/evolution-api:v2.0.0
+FROM node:18-alpine
 
-# Disable all database and storage
+# Install dependencies
+RUN apk add --no-cache curl bash
+
+# Create app directory
+WORKDIR /app
+
+# Install Evolution API
+RUN npm install -g @evolution-api/api
+
+# Copy configuration
+COPY evolution-config.json /app/
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=8080
+ENV SERVER_URL=https://evolution-api-whatsapp.onrender.com
+ENV LOG_LEVEL=ERROR
+ENV CORS_ORIGIN=*
+
+# Disable database
 ENV DATABASE_ENABLED=false
 ENV DATABASE_PROVIDER=""
 ENV DATABASE_CONNECTION_URI=""
 ENV REDIS_ENABLED=false
 ENV REDIS_URI=""
 
-# Disable all storage
+# Disable storage
 ENV STORE_MESSAGES=false
 ENV STORE_CONTACTS=false
 ENV STORE_CHATS=false
 ENV STORE_PRESENCE=false
 ENV STORE_SETTINGS=false
-
-# Server configuration
-ENV SERVER_URL=https://evolution-api-whatsapp.onrender.com
-ENV LOG_LEVEL=ERROR
-ENV CORS_ORIGIN=*
 
 # Webhook configuration
 ENV WEBHOOK_GLOBAL_URL=https://hndll.app.n8n.cloud/webhook/evolution-webhook
@@ -27,4 +41,4 @@ ENV WEBHOOK_GLOBAL_EVENTS="MESSAGES_UPSERT,MESSAGES_UPDATE,MESSAGES_DELETE,SEND_
 
 EXPOSE 8080
 
-CMD ["node", "/evolution/dist/src/main.js"]
+CMD ["evolution-api", "start"]
