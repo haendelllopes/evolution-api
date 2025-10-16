@@ -1,4 +1,4 @@
-FROM atendai/evolution-api:2.0.15
+FROM atendai/evolution-api:latest
 
 # Disable all database and storage
 ENV DATABASE_ENABLED=false
