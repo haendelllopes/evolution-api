@@ -1,4 +1,4 @@
-FROM evolutionapi/evolution-api:latest
+FROM atendai/evolution-api:latest
 
 ENV SERVER_URL=https://evolution-api-whatsapp.onrender.com
 ENV LOG_LEVEL=ERROR
