@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
 # Install dependencies
-RUN apk add --no-cache curl bash python3 make g++
+RUN apk add --no-cache curl bash python3 make g++ git
 
 # Create app directory
 WORKDIR /app
