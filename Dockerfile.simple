@@ -7,7 +7,7 @@ RUN apk add --no-cache curl bash
 WORKDIR /app
 
 # Download and extract Evolution API from release
-RUN curl -L https://github.com/EvolutionAPI/evolution-api/releases/latest/download/evolution-api-linux.tar.gz -o evolution-api.tar.gz && \
+RUN curl -L https://github.com/EvolutionAPI/evolution-api/releases/download/v2.0.0/evolution-api-linux.tar.gz -o evolution-api.tar.gz && \
     tar -xzf evolution-api.tar.gz && \
     rm evolution-api.tar.gz
 
@@ -20,6 +20,15 @@ ENV PORT=8080
 ENV SERVER_URL=https://evolution-api-whatsapp.onrender.com
 ENV LOG_LEVEL=ERROR
 ENV CORS_ORIGIN=*
+
+# Authentication - will be set by Render
+ENV AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY}
+
+# Instance configuration
+ENV INSTANCE_DEFAULT_NAME=navigator-whatsapp
+ENV INSTANCE_DEFAULT_QR_CODE=true
+ENV INSTANCE_DEFAULT_READ_MESSAGES=true
+ENV INSTANCE_DEFAULT_READ_STATUS=true
 
 # Disable database completely
 ENV DATABASE_ENABLED=false

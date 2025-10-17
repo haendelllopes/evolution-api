@@ -2,7 +2,7 @@ services:
   - type: web
     name: evolution-api-whatsapp
     env: docker
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./Dockerfile.simple
     plan: free
     region: oregon
     envVars:
