@@ -9,7 +9,7 @@ WORKDIR /app
 # Clone and build Evolution API from source
 RUN git clone https://github.com/EvolutionAPI/evolution-api.git . && \
     npm install --ignore-scripts && \
-    npm run build:docker
+    npm run build
 
 # Copy configuration
 COPY evolution-config.json /app/
@@ -20,6 +20,15 @@ ENV PORT=8080
 ENV SERVER_URL=https://evolution-api-whatsapp.onrender.com
 ENV LOG_LEVEL=ERROR
 ENV CORS_ORIGIN=*
+
+# Authentication - will be set by Render
+ENV AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY}
+
+# Instance configuration
+ENV INSTANCE_DEFAULT_NAME=navigator-whatsapp
+ENV INSTANCE_DEFAULT_QR_CODE=true
+ENV INSTANCE_DEFAULT_READ_MESSAGES=true
+ENV INSTANCE_DEFAULT_READ_STATUS=true
 
 # Disable database completely
 ENV DATABASE_ENABLED=false
